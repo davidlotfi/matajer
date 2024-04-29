@@ -1,3 +1,7 @@
+<?php
+   require_once('func/database.php');
+   $reponse=$dbd->query('select * from product ORDER BY id DESC');
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -37,6 +41,10 @@
    .text-success {
     color: #28a745!important;
     }
+    .dashboard .top-selling img {
+        border-radius: 5px;
+        max-width: 70px;
+    }
 
   </style>
 <body>
@@ -54,7 +62,6 @@
               <div class="card top-selling overflow-auto">
                 <div class="card-body pb-0">
                     <h5 class="card-title">Top Selling:</h5>
-
                   <table class="table table-borderless">
                     <thead>
                       <tr>
@@ -66,41 +73,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php while ($donnes=$reponse->fetch()) { ?>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
+                        <th scope="row"><a href="#"><img class="d-size" src="images/<?php echo $donnes['image'];?>" alt="" style="height:70px; width:70px;"></a></th>
+                        <td><a href="#" class="text-primary fw-bold"><?php echo $donnes['name']; ?></a></td>
+                        <td><?php echo $donnes['prix']; ?></td>
+                        <td class="fw-bold"><?php echo $donnes['Qt']; ?></td>
                         <td>$4,508</td>
                       </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
+                      <?php  } $reponse->closeCursor(); ?>
                     </tbody>
                   </table>
 
@@ -112,6 +93,7 @@
     </section>
   </main><!-- End #main -->
 
+<form class="" action="controller/addProduct.php" enctype="multipart/form-data" method="post">
 <!-- add Produit modal -->
   <div class="modal fade" id="ExtralargeModal" tabindex="-1">
     <div class="modal-dialog modal-xl">
@@ -121,25 +103,31 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="file" name="1" onchange="document.getElementById('1').src = window.URL.createObjectURL(this.files[0])"  required/>
+          <input type="file" name="1" onchange="document.getElementById('1').src = window.URL.createObjectURL(this.files[0])" required/>
           <br><br>
           <div class="row">
             <div class="col-lg-9">
               <div class="form-group mb-3">
                 <label for="" class="col-sm-2 control-label">Name :</label>
-                <input type="text" class="form-control p-2 mt-2" placeholder="description" name="_name" value="">
+                <input type="text" class="form-control p-2 mt-2" placeholder="description" name="_name" value="" required>
               </div>
               <div class="form-group mb-3">
                 <label for="">Prix :</label>
                 <div class="input-group ">
-                  <input type="text" name="_price" class="form-control" value="" placeholder="">
+                  <input type="number" name="_price" class="form-control" value="" placeholder="" required>
                   <span class="input-group-text">DA</span>
+               </div>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">Quantité :</label>
+                <div class="input-group ">
+                  <input type="number" name="_qt" class="form-control" value="" placeholder="" required>
+                  <span class="input-group-text">QT</span>
                </div>
               </div>
               <label for="">Detail :</label>
               <textarea name="_detail" class="form-control mt-2" rows="3" cols="80"></textarea>
             </div>
-
             <div class="col-lg-3">
               <div class="card"  style="border: 1px solid #777;">
                 <img class="card-img-top" id="1" src="images/image.png" alt="Card image cap" style="height:130px">
@@ -153,10 +141,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Finish</button>
+          <button type="submit" name="commit" class="btn btn-primary">Finish</button>
         </div>
       </div>
     </div>
   </div><!-- End Modal-->
+</form>
 
-  <?php  include('include/footer.php'); ?>
+<?php  include('include/footer.php'); ?>

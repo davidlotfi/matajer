@@ -127,17 +127,17 @@
             <div class="col-lg-9">
               <div class="form-floating">
                 <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                <label for="floatingName">Description</label>
+                <label class="text-primary" for="floatingName">Description</label>
               </div>
               <div class="col-4 mt-2 mb-3">
-                <label for="">Prix :</label>
+                <label class="text-primary" for="">Prix :</label>
                 <div class="input-group ">
                   <input type="text" name="_price" class="form-control" value="" placeholder="">
                   <span class="input-group-text">DA</span>
                </div>
               </div>
               <div class="col-4 mt-2 mb-3">
-                <label for="">Prix :</label>
+                <label class="text-primary" for="">Prix :</label>
                 <div class="input-group ">
                   <input type="text" name="_price" class="form-control" value="" placeholder="">
                   <span class="input-group-text">DA</span>
@@ -145,7 +145,7 @@
               </div>
               <div class="form-floating">
                 <textarea class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
-                <label for="floatingTextarea">Detail</label>
+                <label class="text-primary" for="floatingTextarea">Detail</label>
               </div>
             </div>
 

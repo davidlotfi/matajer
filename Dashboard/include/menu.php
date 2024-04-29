@@ -3,7 +3,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item"><!-- Boutique -->
-      <a class="nav-link collapsed" href="#">
+      <a class="nav-link collapsed" href="boutique.php" target="_blank">
         <i class="bi bi-shop"></i><span>Boutique</span><i class="bi bi-arrow-up-right-square ms-auto"></i>
       </a>
     </li><!-- link boutique -->
