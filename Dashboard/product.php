@@ -65,11 +65,13 @@
                   <table class="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">Preview</th>
                         <th scope="col">Product</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Qt</th>
-                        <th scope="col">Revenue</th>
+                        <th scope="col">Case</th>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Edit</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -77,9 +79,18 @@
                       <tr>
                         <th scope="row"><a href="#"><img class="d-size" src="images/<?php echo $donnes['image'];?>" alt="" style="height:70px; width:70px;"></a></th>
                         <td><a href="#" class="text-primary fw-bold"><?php echo $donnes['name']; ?></a></td>
-                        <td><?php echo $donnes['prix']; ?></td>
+                        <td class="text-success fw-bold"><?php echo $donnes['prix']; ?> DA</td>
                         <td class="fw-bold"><?php echo $donnes['Qt']; ?></td>
-                        <td>$4,508</td>
+                        <td>
+                        <div class="form-check form-switch">
+                           <input class="form-check-input"  type="checkbox" name="" checked>
+                        </div>
+                        </td>
+                        <td><i class="bi bi-arrow-up-right-square" style="font-size:25px;"></i></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary" name="button" style="font-size:12px;" data-bs-toggle="modal" data-bs-target="#update"><i class="bi bi-pen"></i></button>
+                            <button type="button" class="btn btn-danger" name="button" style="font-size:12px;" data-bs-toggle="modal" data-bs-target="#basicModal"><i class="bi bi-trash"></i></button>
+                        </td>
                       </tr>
                       <?php  } $reponse->closeCursor(); ?>
                     </tbody>
@@ -93,9 +104,11 @@
     </section>
   </main><!-- End #main -->
 
-<form class="" action="controller/addProduct.php" enctype="multipart/form-data" method="post">
-<!-- add Produit modal -->
-  <div class="modal fade" id="ExtralargeModal" tabindex="-1">
+  <!-- add Produit modal -->
+  <?php  include('include/addProduct.php'); ?>
+
+  <!-- mise Produit modal -->
+  <div class="modal fade" id="update" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -103,7 +116,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="file" name="1" onchange="document.getElementById('1').src = window.URL.createObjectURL(this.files[0])" required/>
+          <input type="file" name="" onchange="" required/>
           <br><br>
           <div class="row">
             <div class="col-lg-9">
@@ -146,6 +159,6 @@
       </div>
     </div>
   </div><!-- End Modal-->
-</form>
 
-<?php  include('include/footer.php'); ?>
+
+  <?php  include('include/footer.php'); ?>
