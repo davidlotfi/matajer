@@ -1,0 +1,19 @@
+
+<?php
+
+
+// delet porduct
+function delete_product($value=''){
+ global $dbd;
+ $req=$dbd->prepare('DELETE FROM product WHERE id = :Id');
+ $req->execute(array('Id'=>$_POST['id']));
+ //echo "seccess delete";
+}
+
+// supp product
+if (isset($_POST['commitSupprimer'])) {
+    //delete_product();
+  echo "doudou";
+}
+
+ ?>

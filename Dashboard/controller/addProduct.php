@@ -8,6 +8,8 @@ function add_product($image,$name,$price,$quantite){
   $req->closeCursor();
 }
 
+
+
   $name=$_POST['_name'];
   $price=$_POST['_price'];
   $quantite=$_POST['_qt'];
@@ -20,4 +22,6 @@ if(isset($_POST['commit'])) {
      header('Location:../product.php');
   }
 }
+
+
 ?>
