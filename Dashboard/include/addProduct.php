@@ -1,5 +1,4 @@
 <form class="" action="controller/addProduct.php" enctype="multipart/form-data" method="post">
-
   <div class="modal fade" id="ExtralargeModal" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -51,32 +50,4 @@
       </div>
     </div>
   </div><!-- End Modal-->
-
-</form>
-
-<!-- supp Produit modal -->
-<form class="" action="controller/supp.php" method="post">
-
-  <div class="modal fade" id="basicModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-danger">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
-              <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>
-             </svg>
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Really do you want delete the product?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i> Non</button>
-          <button type="submit" class="btn btn-outline-success" name="commitSupprimer"><i class="bi bi-check-lg"></i> Yes</button>
-        </div>
-      </div>
-    </div>
-  </div><!-- End supp Produit Modal-->
-
 </form>

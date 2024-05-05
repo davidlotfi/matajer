@@ -11,9 +11,10 @@ function delete_product($value=''){
 }
 
 // supp product
+$Id=$_POST['_id'];
 if (isset($_POST['commitSupprimer'])) {
     //delete_product();
-  echo "doudou";
+  echo $Id;
 }
 
  ?>
