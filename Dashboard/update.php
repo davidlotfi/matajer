@@ -33,27 +33,29 @@
 
   <main id="main" class="main">
     <section class="section dashboard">
+      <form class="" action="controller/addProduct.php" method="post">
         <div class="col-lg-12">
               <div class="card top-selling overflow-auto pb-4">
                 <div class="card-body pb-0">
                     <h5 class="card-title">Detail of Product:</h5>
                     <div class="row">
                       <div class="col-lg-9">
+                        <input type="text" name="_id" value="<?php echo $donnes['id']; ?>">
                         <div class="form-group mb-3">
                           <label for="" class="col-sm-2 control-label">Name :</label>
-                          <input type="text" class="form-control p-2 mt-2" placeholder="description" name="_name" value="" required>
+                          <input type="text" class="form-control p-2 mt-2" placeholder="description" name="name" value="<?php echo $donnes['name']; ?>" required>
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Prix :</label>
                           <div class="input-group ">
-                            <input type="number" name="_price" class="form-control" value="" placeholder="" required>
+                            <input type="number" name="price" class="form-control" value="<?php echo $donnes['prix']; ?>" placeholder="" required>
                             <span class="input-group-text">DA</span>
                          </div>
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Quantité :</label>
                           <div class="input-group ">
-                            <input type="number" name="_qt" class="form-control" value="" placeholder="" required>
+                            <input type="number" name="qt" class="form-control" value="<?php echo $donnes['Qt']; ?>" placeholder="" required>
                             <span class="input-group-text">QT</span>
                          </div>
                         </div>
@@ -70,7 +72,7 @@
                        </div>
                       </div>
                     </div><br>
-                    <button class="btn btn-primary" type="button" name="button"><i class="bi bi-check-lg"></i> Save</button>
+                    <button class="btn btn-primary" type="submit" name="commitEnregister"><i class="bi bi-check-lg"></i> Save</button>
                     <button class="btn btn-danger" type="button" name="button" data-bs-toggle="modal" data-bs-target="#basicModal"><i class="bi bi-trash"></i> Delete</button>
                 </div>
               </div>
@@ -100,5 +102,6 @@
         </div>
       </div>
     </div><!-- End supp Produit Modal-->
+  </form>
 
   <?php  include('include/footer.php'); ?>
