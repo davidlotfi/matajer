@@ -40,7 +40,7 @@
                     <h5 class="card-title">Detail of Product:</h5>
                     <div class="row">
                       <div class="col-lg-9">
-                        <input type="text" name="_id" value="<?php echo $donnes['id']; ?>">
+                        <input class="d-none" type="text" name="_id" value="<?php echo $donnes['id']; ?>" style="">
                         <div class="form-group mb-3">
                           <label for="" class="col-sm-2 control-label">Name :</label>
                           <input type="text" class="form-control p-2 mt-2" placeholder="description" name="name" value="<?php echo $donnes['name']; ?>" required>

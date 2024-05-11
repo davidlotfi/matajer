@@ -19,7 +19,8 @@ function delete_product($value=''){
  global $dbd;
  $req=$dbd->prepare('DELETE FROM product WHERE id = :Id');
  $req->execute(array('Id'=>$_POST['_id']));
-   echo "seccess delete";
+  // echo "seccess delete";
+  header('Location:../product.php');
 }
 
 // update Product
