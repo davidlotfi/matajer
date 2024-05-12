@@ -30,55 +30,7 @@
 
     <section class="section dashboard">
       <div class="row">
-        <!-- Left side columns -->
         <div class="col-lg-12">
-          <div class="row">
-            <!-- les commandes -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-                <div class="card-body">
-                  <h5 class="card-title">Toutes le commandes:</h5>
-
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div><!-- End les commandes -->
-
-            <!-- Top Selling -->
-            <div class="col-12">
               <div class="card top-selling overflow-auto">
                 <div class="card-body pb-0">
                   <h5 class="card-title">les commandes </h5>
@@ -88,9 +40,10 @@
                         <th scope="col">Product</th>
                         <th scope="col">Customer</th>
                         <th scope="col">Telephone</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Willaya</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
+                        <th scope="col">Quantite</th>
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
@@ -99,31 +52,31 @@
                         <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
                         <td>Brahim bob</td>
                         <td class="text-primary fw-bold">0698204123</td>
+                        <td>15 min</td>
                         <td>Oum el bouaghi</td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
+                        <td>1500 DA</td>
+                        <td class="fw-bold">1</td>
+                        <td><span class="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
                         <td>Salim bouk</td>
                         <td class="text-primary fw-bold">0660908378</td>
+                        <td>1 hours</td>
                         <td>Alger</td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
+                        <td>2900 DA</td>
+                        <td class="fw-bold">10</td>
+                        <td>
+                           <span class="badge bg-warning">Pending</span> ou
+                           <span class="badge bg-danger">Rejected</span>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
 
                 </div>
-
               </div>
-            </div><!-- End Top Selling -->
-
-          </div>
-        </div><!-- End Left side columns -->
-
+        </div>
       </div>
     </section>
   </main><!-- End #main -->
