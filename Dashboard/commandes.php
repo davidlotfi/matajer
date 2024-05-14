@@ -10,6 +10,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Commandes</title>
   </head>
@@ -33,8 +34,8 @@
         <div class="col-lg-12">
               <div class="card top-selling overflow-auto">
                 <div class="card-body pb-0">
-                  <h5 class="card-title">les commandes </h5>
-                  <table class="table table-borderless">
+                  <h5 class="card-title">Orders </h5>
+                  <table class="table table-borderless datatable">
                     <thead>
                       <tr>
                         <th scope="col">Product</th>
@@ -79,5 +80,8 @@
       </div>
     </section>
   </main><!-- End #main -->
+
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
 
   <?php  include('include/footer.php'); ?>
