@@ -113,10 +113,10 @@
                     <div class="col-md-6">
                       <select  class="form-select inputlg" name="_willaya">
                         <option disabled selected>-- willaya --</option>
-                        <option value="1">ADRAR - 01</option>
-                        <option value="2">CHLEF - 02</option>
-                        <option value="3">LAGHOUAT - 03</option>
-                        <option value="4">OUM-EL-BOUAGHI - 04</option>
+                        <option value="ADRAR - 01">ADRAR - 01</option>
+                        <option value="CHLEF - 02">CHLEF - 02</option>
+                        <option value="LAGHOUAT - 03">LAGHOUAT - 03</option>
+                        <option value="OUM-EL-BOUAGHI - 04">OUM-EL-BOUAGHI - 04</option>
                         <option value="5">BATNA - 05</option>
                         <option value="6">BEJAIA - 06</option>
                         <option value="7">BISKRA - 07</option>

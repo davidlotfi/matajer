@@ -1,3 +1,7 @@
+<?php
+   require_once('func/database.php');
+   $reponse=$dbd->query('select * from commande ORDER BY id DESC');
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -49,29 +53,20 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php while ($orders=$reponse->fetch()) { ?>
                       <tr>
                         <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td>Brahim bob</td>
-                        <td class="text-primary fw-bold">0698204123</td>
+                        <td><?php echo $orders['client_name']; ?> <?php echo $orders['client_prenom']; ?></td>
+                        <td class="text-primary fw-bold"><?php echo $orders['telephone']; ?></td>
                         <td>15 min</td>
-                        <td>Oum el bouaghi</td>
-                        <td>1500 DA</td>
-                        <td class="fw-bold">1</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td>Salim bouk</td>
-                        <td class="text-primary fw-bold">0660908378</td>
-                        <td>1 hours</td>
-                        <td>Alger</td>
-                        <td>2900 DA</td>
-                        <td class="fw-bold">10</td>
+                        <td><?php echo $orders['willaya']; ?></td>
+                        <td><?php echo $orders['prix']; ?> DA</td>
+                        <td class="fw-bold"><?php echo $orders['quantite']; ?></td>
                         <td>
-                           <span class="badge bg-warning">Pending</span> ou
-                           <span class="badge bg-danger">Rejected</span>
+                           <span class="badge bg-success">Approved</span>
                         </td>
                       </tr>
+                     <?php  } $reponse->closeCursor(); ?>
                     </tbody>
                   </table>
                 </div>

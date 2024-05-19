@@ -31,7 +31,15 @@
   <?php  include('include/header.php'); ?>
   <?php  include('include/menu.php'); ?>
 
+
   <main id="main" class="main">
+
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+      <i class="bi bi-check-circle me-1"></i>
+      A simple success alert with solid color—check it out!
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <section class="section dashboard">
       <form class="" action="controller/addProduct.php" method="post">
         <div class="col-lg-12">

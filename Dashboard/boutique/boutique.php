@@ -97,9 +97,17 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <p>Chief Executive OfficerChief Executive Officer Chief Executive Officer Chief Executive Officer</p>
+                <h5><?php echo $donnes['name']; ?></h5>
+                <span>
+                  <div class="d-flex text-warning mb-2">
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                  </div>
+                </span>
+                <h4 class="text-primary"><?php echo $donnes['prix']; ?> DA</h4>
               </div>
             </div>
           </div>
