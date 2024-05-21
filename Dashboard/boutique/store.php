@@ -102,6 +102,7 @@
                   <!-- No Labels Form -->
                   <form class="row g-3" action="../controller/command_post.php" method="post">
                     <div class="col-md-6">
+                      <input class="d-none" type="text" name="_id" value="<?php echo $donnes['id']; ?>">
                       <input type="text" class="form-control inputlg" name="_nom" placeholder="Nom" required>
                     </div>
                     <div class="col-md-6">
@@ -117,17 +118,17 @@
                         <option value="CHLEF - 02">CHLEF - 02</option>
                         <option value="LAGHOUAT - 03">LAGHOUAT - 03</option>
                         <option value="OUM-EL-BOUAGHI - 04">OUM-EL-BOUAGHI - 04</option>
-                        <option value="5">BATNA - 05</option>
-                        <option value="6">BEJAIA - 06</option>
-                        <option value="7">BISKRA - 07</option>
-                        <option value="8">BECHAR - 08</option>
-                        <option value="9">BLIDA - 09</option>
-                        <option value="10">BOUIRA - 10</option>
-                        <option value="11">TAMANRASSET - 11</option>
-                        <option value="12">TEBESSA - 12</option>
-                        <option value="13">TLEMCEN - 13</option>
-                        <option value="14">TIARET - 14</option>
-                        <option value="15">TIZI-OUZOU - 15</option>
+                        <option value="BATNA - 05">BATNA - 05</option>
+                        <option value="BEJAIA - 06">BEJAIA - 06</option>
+                        <option value="BISKRA - 07">BISKRA - 07</option>
+                        <option value="BECHAR - 08">BECHAR - 08</option>
+                        <option value="BLIDA - 09">BLIDA - 09</option>
+                        <option value="BOUIRA - 10">BOUIRA - 10</option>
+                        <option value="TAMANRASSET - 11">TAMANRASSET - 11</option>
+                        <option value="TEBESSA - 12">TEBESSA - 12</option>
+                        <option value="TLEMCEN - 13">TLEMCEN - 13</option>
+                        <option value="TIARET - 14">TIARET - 14</option>
+                        <option value="TIZI-OUZOU - 15">TIZI-OUZOU - 15</option>
                         <option value="16">ALGER - 16</option>
                         <option value="17">DJELFA - 17</option>
                         <option value="18">JIJEL - 18</option>

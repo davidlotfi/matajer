@@ -87,7 +87,7 @@
                         </td>
                         <td><i class="bi bi-arrow-up-right-square" style="font-size:25px;"></i></td>
                         <td>
-                          <a href="update.php?IDD=<?php echo $donnes['id']; ?>"> <button type="button" class="btn btn-secondary" name="button" style="font-size:12px;"><i class="bi bi-pen"></i></button></a> 
+                          <a href="update.php?IDD=<?php echo $donnes['id']; ?>"> <button type="button" class="btn btn-secondary" name="button" style="font-size:12px;"><i class="bi bi-pen"></i></button></a>
                         </td>
                       </tr>
                     <?php  } $reponse->closeCursor(); ?>

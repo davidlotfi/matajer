@@ -2,15 +2,16 @@
 <?php
  function add_command($command=[]){
   global $dbd;
-  $req=$dbd->prepare('INSERT INTO commande(client_name,client_prenom,telephone,willaya,address,prix,quantite)VALUES(:nom,:prenom,:telephone,:willaya,:address,:prix,:quantite)');
+  $req=$dbd->prepare('INSERT INTO commande(id_product,client_name,client_prenom,telephone,willaya,address,prix,quantite)VALUES(:id,:nom,:prenom,:telephone,:willaya,:address,:prix,:quantite)');
   $req->execute(array(
-    'nom'=>$command[0],
-    'prenom'=>$command[1],
-    'telephone'=>$command[2],
-    'willaya'=>$command[3],
-    'address'=>$command[4] ,
-    'prix'=>$command[5] ,
-    'quantite'=>$command[6]
+    'id'=>$command[0],
+    'nom'=>$command[1],
+    'prenom'=>$command[2],
+    'telephone'=>$command[3],
+    'willaya'=>$command[4],
+    'address'=>$command[5] ,
+    'prix'=>$command[6] ,
+    'quantite'=>$command[7]
   ));
     $req->closeCursor();
 }
@@ -21,6 +22,7 @@ function redirect_to($location){
 
 // if submitted
 if (isset($_POST['commit']) and !empty($_POST['_willaya']) ) {
+    $id=$_POST['_id'];
     $nom= $_POST['_nom'];
     $prenom= $_POST['_prenom'];
     $telephone= $_POST['_telephone'];
@@ -28,7 +30,7 @@ if (isset($_POST['commit']) and !empty($_POST['_willaya']) ) {
     $address= $_POST['_address'];
     $prix=3000;
     $quant=1;
-    $dommand=[$nom,$prenom,$telephone,$willaya,$address,$prix,$quant];
+    $dommand=[$id,$nom,$prenom,$telephone,$willaya,$address,$prix,$quant];
      add_command($dommand);
      $location="../boutique/success.php";
      redirect_to($location);

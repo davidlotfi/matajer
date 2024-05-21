@@ -10,17 +10,17 @@
   </head>
   <body>
       <div class="alert alert-success" role="alert">
-         <img src="icon-check.png" alt=""> La command fait avec  success
+         <img src="../assets/img/portfolio/icon-check.png" alt=""> La command fait avec  success
       </div>
-      <a href="store.php"><button type="button" class="btn btn-primary btn-lg" style="position: absolute;
+      <a href="boutique.php"><button type="button" class="btn btn-primary btn-lg" style="position: absolute;
       left: 100px;">new commande</button></a>
 
-      <a href="index.php"><button type="button" class="btn btn-primary btn-lg" style="position: absolute;
+      <a href="boutique.php"><button type="button" class="btn btn-primary btn-lg" style="position: absolute;
       left: 400px;">Home</button></a>
       <div class="container">
            <div class="row">
                <div class="heading text-center ">
-                    <img src="success.gif" alt="">
+                    <img src="../assets/img/portfolio/success.gif" alt="">
                </div>
            </div>
       </div>

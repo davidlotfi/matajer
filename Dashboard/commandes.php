@@ -1,6 +1,12 @@
 <?php
    require_once('func/database.php');
    $reponse=$dbd->query('select * from commande ORDER BY id DESC');
+   function get_image($id){
+     global $dbd;
+     $reponse2=$dbd->prepare('select image from product WHERE id=?');
+     $reponse2->execute(array($id));
+     return $reponse2->fetch();
+   }
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -18,6 +24,7 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Commandes</title>
   </head>
+
 <body>
   <?php  include('include/header.php'); ?>
   <?php  include('include/menu.php'); ?>
@@ -53,20 +60,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php while ($orders=$reponse->fetch()) { ?>
+                      <?php while ($orders=$reponse->fetch()){
+                        $id=$orders['id_product'];
+                        $image=get_image($id);
+                        ?>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><?php echo $orders['client_name']; ?> <?php echo $orders['client_prenom']; ?></td>
-                        <td class="text-primary fw-bold"><?php echo $orders['telephone']; ?></td>
-                        <td>15 min</td>
-                        <td><?php echo $orders['willaya']; ?></td>
-                        <td><?php echo $orders['prix']; ?> DA</td>
+                        <th scope="row"><a href="#"><img src="images/<?php echo $image['image'];?>" alt=""></a></th>
+                        <td><span class=""><?php echo $orders['client_name']; ?> <?php echo $orders['client_prenom']; ?></span></td>
+                        <td><span class="text-primary fw-bold"><?php echo $orders['telephone']; ?></span></td>
+                        <td><span class="text-success fw-bold">15 min</span></td>
+                        <td><span class="text-secondary fw-bold"><?php echo $orders['willaya']; ?></span></td>
+                        <td><span class="text-primary fw-bold"><?php echo $orders['prix']; ?> DA</span></td>
                         <td class="fw-bold"><?php echo $orders['quantite']; ?></td>
                         <td>
                            <span class="badge bg-success">Approved</span>
                         </td>
                       </tr>
-                     <?php  } $reponse->closeCursor(); ?>
+                     <?php } $reponse->closeCursor(); ?>
                     </tbody>
                   </table>
                 </div>
