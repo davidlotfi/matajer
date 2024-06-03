@@ -1,10 +1,25 @@
 <?php
   require_once('../func/database.php');
+  require_once('../controller/view.php');
 
   $reponse=$dbd->prepare('SELECT * FROM product WHERE id=?');
   $reponse->execute(array($_GET['dd']));
   $donnes=$reponse->fetch();
 
+  session_start(); // Start the session
+  // Check if the page view counter session variable exists
+  if(isset($_SESSION['page_views'])) {
+      // Increment the page view counter
+      $_SESSION['page_views']++;
+  } else {
+      // Set the initial page view counter to 1
+      $_SESSION['page_views'] = 1;
+  }
+  // Display the page view count
+  //echo "Page Views: " . $_SESSION['page_views'];
+  $view = $_SESSION['page_views'];
+  up_view($view);
+  
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +103,7 @@
           </div>
 
           <div class="col-lg-6">
-                <h3 class="text-info">sajada salat</h3>
+                <h3 class=""><?php echo $donnes['name']; ?></h3>
                 <div class="d-flex text-warning mb-2">
                     <div class="bi-star-fill"></div>
                     <div class="bi-star-fill"></div>
@@ -96,7 +111,7 @@
                     <div class="bi-star-fill"></div>
                     <div class="bi-star-fill"></div>
                 </div>
-               <h3 class="text-success">2000 DA <span class="text-danger text-decoration-line-through">3000 DA</span></h3>
+               <h3 class="text-primary"><?php echo $donnes['prix']; ?> DA <span class="text-secondary text-decoration-line-through">3000 DA</span></h3>
               <div class="card border-warning">
                 <div class="card-body text-info">
                   <!-- No Labels Form -->

@@ -1,3 +1,10 @@
+<?php
+    require_once('func/database.php');
+    require_once('controller/orders.php');
+    $reponse=$dbd->query('select * from product ORDER BY id DESC');
+    $reponse2=$dbd->query('select * from store where id=1');
+    $views=$reponse2->fetch();
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +13,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="images/store-logo-icon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -43,8 +50,7 @@
                       <i class="bi bi-cart"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <h6><?php echo count_orders(); ?></h6>
                     </div>
                   </div>
                 </div>
@@ -61,8 +67,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <h6>120000 DA</h6>
                     </div>
                   </div>
                 </div>
@@ -73,14 +78,13 @@
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card customers-card">
                 <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+                  <h5 class="card-title">View <span>| Today</span></h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <h6><?php echo $views['view'];?></h6>
                     </div>
                   </div>
                 </div>
@@ -98,46 +102,20 @@
                         <th scope="col">Preview</th>
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
+                        <th scope="col">Orders</th>
                         <th scope="col">Revenue</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <?php while ($donnes=$reponse->fetch()) { ?>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
+                        <th scope="row"><a href="#"><img src="images/<?php echo $donnes['image'];?>" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold"><?php echo $donnes['name']; ?></a></td>
+                        <td><?php echo $donnes['prix']; ?> DA</td>
                         <td class="fw-bold">124</td>
-                        <td>$5,828</td>
+                        <td>120000 DA</td>
                       </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
+                      <?php  } $reponse->closeCursor(); ?>
                     </tbody>
                   </table>
 
@@ -153,4 +131,4 @@
     </section>
   </main><!-- End #main -->
 
-  <?php // include('include/footer.php'); ?>
+  <?php  include('include/footer.php'); ?>

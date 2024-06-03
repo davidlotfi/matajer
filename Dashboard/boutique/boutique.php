@@ -1,6 +1,23 @@
 <?php
    require_once('../func/database.php');
+   require_once('../controller/view.php');
+
    $reponse=$dbd->query('select * from product ORDER BY id DESC');
+
+   session_start(); // Start the session
+   // Check if the page view counter session variable exists
+   if(isset($_SESSION['page_views'])) {
+       // Increment the page view counter
+       $_SESSION['page_views']++;
+   } else {
+       // Set the initial page view counter to 1
+       $_SESSION['page_views'] = 1;
+   }
+   // Display the page view count
+   //echo "Page Views: " . $_SESSION['page_views'];
+   $view = $_SESSION['page_views'];
+   up_view($view);
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +109,7 @@
               <div class="member-img">
                 <img src="../images/<?php echo $donnes['image']; ?>" class="img-fluid" alt="">
                 <div class="social">
-                <a class="" href="store.php?dd=<?php echo $donnes['id']; ?>"><button class="btn btn-primary" type="button" name="button">اطلب الان</button></a>
+                <a class="" href="store.php?dd=<?php echo urlencode($donnes['id']); ?>"><button class="btn btn-primary" type="button" name="button">اطلب الان</button></a>
 
                 </div>
               </div>
