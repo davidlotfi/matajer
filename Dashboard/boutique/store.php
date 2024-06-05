@@ -19,7 +19,7 @@
   //echo "Page Views: " . $_SESSION['page_views'];
   $view = $_SESSION['page_views'];
   up_view($view);
-  
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,6 +118,7 @@
                   <form class="row g-3" action="../controller/command_post.php" method="post">
                     <div class="col-md-6">
                       <input class="d-none" type="text" name="_id" value="<?php echo $donnes['id']; ?>">
+                      <input class="d-none" type="text" name="_prix" value="<?php echo $donnes['prix']; ?>">
                       <input type="text" class="form-control inputlg" name="_nom" placeholder="Nom" required>
                     </div>
                     <div class="col-md-6">

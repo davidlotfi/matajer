@@ -28,7 +28,7 @@ if (isset($_POST['commit']) and !empty($_POST['_willaya']) ) {
     $telephone= $_POST['_telephone'];
     $willaya= $_POST['_willaya'];
     $address= $_POST['_address'];
-    $prix=3000;
+    $prix= $_POST['_prix'];
     $quant=1;
     $dommand=[$id,$nom,$prenom,$telephone,$willaya,$address,$prix,$quant];
      add_command($dommand);

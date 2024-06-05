@@ -67,7 +67,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>120000 DA</h6>
+                      <h6>1200 requt sql DA</h6>
                     </div>
                   </div>
                 </div>
@@ -112,8 +112,11 @@
                         <th scope="row"><a href="#"><img src="images/<?php echo $donnes['image'];?>" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold"><?php echo $donnes['name']; ?></a></td>
                         <td><?php echo $donnes['prix']; ?> DA</td>
-                        <td class="fw-bold">124</td>
-                        <td>120000 DA</td>
+                        <td class="fw-bold">
+                          <?php  $id=$donnes['id']; ?>
+                          <?php echo count_product_by_orders($id); ?>
+                        </td>
+                        <td><?php echo ($donnes['prix']*count_product_by_orders($id)); ?> DA</td>
                       </tr>
                       <?php  } $reponse->closeCursor(); ?>
                     </tbody>
