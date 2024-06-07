@@ -3,13 +3,13 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item"><!-- Boutique -->
-      <a class="nav-link collapsed" href="boutique/boutique.php" target="_blank">
+      <a class="nav-link" href="boutique/boutique.php" target="_blank">
         <i class="bi bi-shop"></i><span>Boutique</span><i class="bi bi-arrow-up-right-square ms-auto"></i>
       </a>
     </li><!-- link boutique -->
     <br>
     <li class="nav-item"><!-- accail -->
-      <a class="nav-link " href="dashboard.php">
+      <a class="nav-link collapsed" href="dashboard.php">
         <i class="bi bi-grid"></i>
         <span>Dashboard</span>
       </a>
@@ -28,8 +28,8 @@
     </li><!-- End Produits Nav -->
 
     <li class="nav-item"><!-- Clients -->
-      <a class="nav-link collapsed" href="#">
-        <i class="bi bi-people"></i><span>Clients</span>
+      <a class="nav-link collapsed" href="application.php">
+        <i class="bi bi-gift"></i><span>Applications</span>
       </a>
     </li><!-- End Clients Nav -->
 

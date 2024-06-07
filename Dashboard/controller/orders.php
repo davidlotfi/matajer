@@ -1,4 +1,4 @@
-<?php// require_once('../func/database.php'); ?>
+<?php //require_once('../func/database.php'); ?>
 <?php
 
   function find_all_orders(){
@@ -22,6 +22,10 @@
   function find_by_sql($sql=""){
     global $dbd;
     return $dbd->query($sql);
+  }
+  function revenue(){
+    global $dbd;
+    return $dbd->query('select sum(prix) as revenue from commande');
   }
 
 

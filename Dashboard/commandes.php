@@ -31,13 +31,7 @@
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Commandes</li>
-        </ol>
-      </nav>
+      <h1>Commandes</h1>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">

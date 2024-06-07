@@ -85,7 +85,7 @@
                            <input class="form-check-input"  type="checkbox" name="" checked>
                         </div>
                         </td>
-                        <td><i class="bi bi-arrow-up-right-square" style="font-size:25px;"></i></td>
+                        <td><a href="boutique/store.php?dd=<?php echo urlencode($donnes['id']); ?>" target="_blank"><i class="bi bi-arrow-up-right-square" style="font-size:25px;" data-bs-toggle="tooltip" data-bs-placement="top" title="Landing Page"></i></a></td>
                         <td>
                           <a href="update.php?IDD=<?php echo $donnes['id']; ?>"> <button type="button" class="btn btn-secondary" name="button" style="font-size:12px;"><i class="bi bi-pen"></i></button></a>
                         </td>

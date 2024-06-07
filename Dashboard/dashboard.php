@@ -4,6 +4,8 @@
     $reponse=$dbd->query('select * from product ORDER BY id DESC');
     $reponse2=$dbd->query('select * from store where id=1');
     $views=$reponse2->fetch();
+    $revenue=revenue();
+    $sall=$revenue->fetch();
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -27,12 +29,6 @@
   <main id="main" class="main">
     <div class="pagetitle">
       <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -67,7 +63,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>1200 requt sql DA</h6>
+                      <h6><?php echo $sall['revenue']; ?></h6>
                     </div>
                   </div>
                 </div>
