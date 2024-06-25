@@ -3,8 +3,7 @@
 
    $reponse=$dbd->prepare('SELECT * FROM product WHERE id=?');
    $reponse->execute(array($_GET['IDD']));
-   $donnes=$reponse->fetch();
-
+   $donnes2=$reponse->fetch();
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,36 +33,30 @@
 
   <main id="main" class="main">
 
-    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
-      <i class="bi bi-check-circle me-1"></i>
-      A simple success alert with solid color—check it out!
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
     <section class="section dashboard">
-      <form class="" action="controller/addProduct.php" method="post">
+      <form class="" action="controller\addProduct.php" method="post">
         <div class="col-lg-12">
               <div class="card top-selling overflow-auto pb-4">
                 <div class="card-body pb-0">
                     <h5 class="card-title">Detail of Product:</h5>
                     <div class="row">
                       <div class="col-lg-9">
-                        <input class="d-none" type="text" name="_id" value="<?php echo $donnes['id']; ?>" style="">
+                        <input class="d-none" type="text" name="_id" value="<?php echo $donnes2['id']; ?>" style="">
                         <div class="form-group mb-3">
                           <label for="" class="col-sm-2 control-label">Name :</label>
-                          <input type="text" class="form-control p-2 mt-2" placeholder="description" name="name" value="<?php echo $donnes['name']; ?>" required>
+                          <input type="text" class="form-control p-2 mt-2" placeholder="description" name="name" value="<?php echo $donnes2['name']; ?>" required>
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Prix :</label>
                           <div class="input-group ">
-                            <input type="number" name="price" class="form-control" value="<?php echo $donnes['prix']; ?>" placeholder="" required>
+                            <input type="number" name="price" class="form-control" value="<?php echo $donnes2['prix']; ?>" placeholder="" required>
                             <span class="input-group-text">DA</span>
                          </div>
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Quantité :</label>
                           <div class="input-group ">
-                            <input type="number" name="qt" class="form-control" value="<?php echo $donnes['Qt']; ?>" placeholder="" required>
+                            <input type="number" name="qt" class="form-control" value="<?php echo $donnes2['Qt']; ?>" placeholder="" required>
                             <span class="input-group-text">QT</span>
                          </div>
                         </div>
@@ -72,7 +65,7 @@
                       </div>
                       <div class="col-lg-3">
                         <div class="card"  style="border: 1px solid #777;">
-                          <img class="card-img-top" id="1" src="images/<?php echo $donnes['image']; ?>" alt="Card image cap" style="height:130px">
+                          <img class="card-img-top" id="1" src="images/<?php echo $donnes2['image']; ?>" alt="Card image cap" style="height:130px">
                           <div class="card-body">
                              <h6 class="card-title text-success">1000 DA</h6>
                              <p class="card-text">Paper Puzzle Toy Educational Developmental Baby Kids.</p>

@@ -1,5 +1,5 @@
 <?php
-  require_once('../func/database.php');
+   require_once('../func/database.php');
 
 function add_product($image,$name,$price,$quantite){
   global $dbd;
@@ -12,7 +12,7 @@ function update_product($value=''){
  global $dbd;
  $req=$dbd->prepare('UPDATE product SET name = :name, prix = :prix, Qt = :qt WHERE id = :Id');
  $req->execute( array('name' =>$_POST['name'] ,'prix' => $_POST['price'] ,'qt' => $_POST['qt'] , 'Id' => $_POST['_id']));
-   echo "seccess update";
+   header("Location:../update.php?IDD=$value");
 }
 // delet porduct
 function delete_product($value=''){
@@ -24,11 +24,11 @@ function delete_product($value=''){
 }
 
 // update Product
+
 if (isset($_POST['commitEnregister']) || isset($_POST['commitSupprimer'])){
   $Id=$_POST['_id'];
   if (isset($_POST['commitEnregister'])) {
-    update_product($Id);
-  //  $message='seccess update';
+       update_product($Id);
   }
   if (isset($_POST['commitSupprimer'])) {
     delete_product($Id);

@@ -63,7 +63,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3">
-                      <h6><?php echo $sall['revenue']; ?></h6>
+                      <h6><?php echo $sall['revenue']; ?> DA</h6>
                     </div>
                   </div>
                 </div>
