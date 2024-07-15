@@ -63,15 +63,15 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="images/1.jpeg" alt="">
+                  <img src="images/1.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="images/2.jpeg" alt="">
+                  <img src="images/2.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="images/3.jpeg" alt="">
+                  <img src="images/3.jpg" alt="">
                 </div>
 
               </div>

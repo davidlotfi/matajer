@@ -35,22 +35,35 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
+      <!-- Sales Card -->
+      <div class="col-lg-12">
+        <div class="card info-card sales-card pb-0">
+          <div class="card-body">
+            <div class="card-title pb-0">
+              <button type="button" class="btn btn-primary" name="button">Imprimer</button>
+              <button type="button" class="btn btn-success" name="button">CVC format</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Sales Card -->
+
       <div class="row">
         <div class="col-lg-12">
               <div class="card top-selling overflow-auto">
                 <div class="card-body pb-0">
-                  <h5 class="card-title">Orders </h5>
+                  <h5 class="card-title"></h5>
                   <table class="table table-borderless datatable">
                     <thead>
                       <tr>
                         <th scope="col">Product</th>
-                        <th scope="col">Customer</th>
+                        <th scope="col">Client</th>
                         <th scope="col">Telephone</th>
                         <th scope="col">Date</th>
                         <th scope="col">Willaya</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantite</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Modifer</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -60,15 +73,16 @@
                         ?>
                       <tr>
                         <th scope="row"><a href="#"><img src="images/<?php echo $image['image'];?>" alt=""></a></th>
-                        <td><span class=""><?php echo $orders['client_name']; ?> <?php echo $orders['client_prenom']; ?></span></td>
+                        <td><span class=""><?php echo $orders['client_name'].' '. $orders['client_prenom']; ?></span></td>
                         <td><span class="text-primary fw-bold"><?php echo $orders['telephone']; ?></span></td>
                         <td><span class="text-success fw-bold">15 min</span></td>
                         <td><span class="text-secondary fw-bold"><?php echo $orders['willaya']; ?></span></td>
                         <td><span class="text-primary fw-bold"><?php echo $orders['prix']; ?> DA</span></td>
                         <td class="fw-bold"><?php echo $orders['quantite']; ?></td>
                         <td>
-                           <span class="badge bg-success">Approved</span>
+                           <span class="badge bg-success"><?php echo  $orders['etat']; ?></span>
                         </td>
+                        <td><a href="order-detail.php?order=<?php echo $orders['id']; ?>"><button type="button" class="btn btn-warning" name="button" style="font-size:12px;"><i class="bi bi-pen"></i></button></a></td>
                       </tr>
                      <?php } $reponse->closeCursor(); ?>
                     </tbody>

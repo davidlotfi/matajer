@@ -105,4 +105,5 @@
     </div><!-- End supp Produit Modal-->
   </form>
 
+
   <?php  include('include/footer.php'); ?>
