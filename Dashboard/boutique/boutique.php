@@ -124,7 +124,12 @@
                       <div class="bi-star-fill"></div>
                   </div>
                 </span>
-                <h4 class="text-primary"><?php echo $donnes['prix']; ?> DA</h4>
+                <div class="d-flex">
+                  <h4 class="text-primary"><?php echo $donnes['prix']; ?> DA</h4>
+                  &nbsp;&nbsp;
+                  <h4 class="text-secondary text-decoration-line-through"><?php echo $donnes['prix']; ?> DA</h4>
+                </div>
+
               </div>
             </div>
           </div>

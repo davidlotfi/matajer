@@ -59,13 +59,14 @@
                     <td><span class="text-primary fw-bold"><?php echo $commande['prix']; ?> DA</span></td>
                     <td class="fw-bold"><?php echo $commande['quantite']; ?></td>
                     <td>
-                       <span class="badge bg-success">Approved</span>
+                       <span class="badge bg-success"><?php echo $commande['etat']; ?></span>
                     </td>
                     <td>
                        <select class="form-select" name="status" required>
                           <option value="<?php echo $commande['etat']; ?>" selected><?php echo $commande['etat']; ?></option>
                           <option value="confirmer">confirmer</option>
                           <option value="livrer">livrer</option>
+                          <option value="en attente">en attente</option>
                           <option value="annuler">annuler</option>
                        </select>
                     </td>

@@ -15,6 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="web-fonts-with-css/css/fontawesome-all.min.css">
     <title>Product</title>
   </head>
   <style media="screen">
@@ -45,6 +46,12 @@
         border-radius: 5px;
         max-width: 70px;
     }
+    .btn{
+      font-weight: 500;
+    }
+    .progressbar{
+      margin-left:40%;
+     }
   </style>
 <body>
   <?php  include('include/header.php'); ?>
@@ -104,5 +111,7 @@
 
   <!-- add Produit modal -->
   <?php  include('include/addProduct.php'); ?>
+
+  <script src="js/script." charset="utf-8"></script>
 
   <?php  include('include/footer.php'); ?>
