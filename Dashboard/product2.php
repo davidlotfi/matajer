@@ -59,7 +59,7 @@
 
   <main id="main" class="main">
     <section class="section dashboard">
-      <button class="instacart_com" data-bs-toggle="modal" data-bs-target="#ExtralargeModal" type="button"><i class="bi bi-images me-1"></i> Add Product</button>
+      <button class="instacart_com" data-bs-toggle="modal" data-bs-target="#ExtralargeModal" type="button"><i class="bi bi-plus-square me-1"></i> Add Product</button>
       <br><br>
         <div class="col-lg-12">
           <div class="row">
@@ -148,6 +148,12 @@
                     <span class="input-group-text text-decoration-line-through">DA</span>
                  </div>
                 </div>
+                <div class="form-group">
+                  <label for="">Autre images :</label><br><br>
+                  <input type="file" name="" onchange="document.getElementById('2').src = window.URL.createObjectURL(this.files[0])"/>
+                  <input type="file" name="" onchange="document.getElementById('3').src = window.URL.createObjectURL(this.files[0])"/>
+                  <input type="file" name="" onchange="document.getElementById('4').src = window.URL.createObjectURL(this.files[0])"/>
+                </div>
               </div>
               <div class="col-lg-3">
                 <div class="card"  style="border: 1px solid #777;">
@@ -170,13 +176,13 @@
                </div>
                <div class="row no-gutters">
                  <div class="col-2 col-sm-4">
-                   <img class="img-thumbnail" src="images/image.png" alt="" style="height:70px;">
+                   <img class="img-thumbnail" id="2" src="images/image.png" alt="" style="height:70px;">
                  </div>
                  <div class="col-2 col-sm-4">
-                   <img class="img-thumbnail" src="images/image.png" alt="" style="height:70px;">
+                   <img class="img-thumbnail" id="3" src="images/image.png" alt="" style="height:70px;">
                  </div>
                  <div class="col-2 col-sm-4">
-                   <img class="img-thumbnail" src="images/image.png" alt="" style="height:70px;">
+                   <img class="img-thumbnail" id="4" src="images/image.png" alt="" style="height:70px;">
                  </div>
                </div>
               </div>
