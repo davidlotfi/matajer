@@ -50,7 +50,10 @@
       font-weight: 500;
     }
     .progressbar{
-      margin-left:40%;
+      margin-left:30%;
+     }
+     .modal-body{
+       background-color: #FDF6E3;
      }
   </style>
 <body>
@@ -117,12 +120,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-primary">Add New Product</h5>
+            <div class="progressbar">
+                <div class="progress mt-3" style="height:10px; width:150px;">
+                     <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="progressbar">
-              <div class="progress mt-3" style="height:10px; width:150px;">
-                   <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
           </div>
           <div class="modal-body">
             <div class="step d-none">
@@ -135,21 +138,21 @@
                   <input type="text" class="form-control p-2 mt-2" placeholder="titre de Product" name="_name" value="" required>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="">Prix actuel :</label>
-                  <div class="input-group ">
-                    <input type="number" name="_price" class="form-control" value="" placeholder="1000" required>
-                    <span class="input-group-text">DA</span>
+                  <label for="" class="">Prix actuel :</label>
+                  <div class="input-group">
+                    <input type="number" name="_price" class="form-control p-2 mt-2" value="" placeholder="1000" required>
+                    <span class="input-group-text p-2 mt-2">DA</span>
                  </div>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="">Ancien Prix :</label>
+                  <label for="" class="">Ancien Prix :</label>
                   <div class="input-group ">
-                    <input type="number" name="_" class="form-control text-decoration-line-through" value="" placeholder="1000" required>
-                    <span class="input-group-text text-decoration-line-through">DA</span>
+                    <input type="number" name="_" class="form-control text-decoration-line-through p-2 mt-2" value="" placeholder="1000" required>
+                    <span class="input-group-text p-2 mt-2">DA</span>
                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="">Autre images :</label><br><br>
+                  <label for="" class="text-success mb-2">Autre images :</label><br>
                   <input type="file" name="" onchange="document.getElementById('2').src = window.URL.createObjectURL(this.files[0])"/>
                   <input type="file" name="" onchange="document.getElementById('3').src = window.URL.createObjectURL(this.files[0])"/>
                   <input type="file" name="" onchange="document.getElementById('4').src = window.URL.createObjectURL(this.files[0])"/>
@@ -188,25 +191,50 @@
               </div>
             </div>
           </div>
+
           <div class="step d-none">
-            <div class="form-group mb-3">
-              <label for="">Quantité :</label>
-              <div class="input-group ">
-                <input type="number" name="_qt" class="form-control" value="" placeholder="" required>
-                <span class="input-group-text">QT</span>
-             </div>
+            <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group mb-3">
+                <label for="">Quantité :</label>
+                <div class="input-group ">
+                  <input type="number" name="_qt" class="form-control" value="" placeholder="" required>
+                  <span class="input-group-text">QT</span>
+               </div>
+              </div>
+              <label for="">Detail :</label>
+              <textarea name="_detail" class="form-control mt-2" rows="3" cols="80"></textarea>
             </div>
-            <label for="">Detail :</label>
-            <textarea name="_detail" class="form-control mt-2" rows="3" cols="80"></textarea>
+            <div class="col-lg-6">
+              <!-- Card with an image on left -->
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="images/image.png" id="1" class="img-fluid" alt="" style="height:100%;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <img src="images/sc.png" class="img-fluid mt-3" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Card with an image on left -->
+            </div>
+           </div>
+           <div class="form-group">
+             <label for="" class="text-success mb-2">landing Page :</label><br>
+             <input type="file" name="" onchange=""/>
+             <input type="file" name="" onchange=""/>
+           </div>
           </div>
+
           <div class="step d-none">
-            <div class="form-group mb-3">
-              <label for="">Quantité :</label>
-              <div class="input-group ">
-                <input type="number" name="_qt" class="form-control" value="" placeholder="" required>
-                <span class="input-group-text">QT</span>
-             </div>
-            </div>
+            <figure class="text-center mt-3 mb-3">
+               <img src="images/puzzle.jpg" class="img-thumbnail" alt="" style="width:300px">
+               <figcaption class="mt-2">
+                 <button type="button" class="btn btn-primary" name="button">Terminer</button>
+               </figcaption>
+            </figure>
           </div>
           </div>
           <div class="modal-footer">
